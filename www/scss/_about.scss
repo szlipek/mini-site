@@ -1,0 +1,12 @@
+.about {
+    padding: 2.6rem 0 6.2rem;
+    h2 {
+        margin-bottom: 2.3rem;
+    }
+    &__text {
+        @include breakpoint(desktop) {
+            column-count: 2;
+            column-gap: 3rem;
+        }
+    }
+}

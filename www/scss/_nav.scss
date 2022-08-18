@@ -1,0 +1,162 @@
+.nav {
+    position: fixed;
+    top: 7.2rem;
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    transition: $transition;
+    box-shadow: 0 0 0 rgba(0,0,0,.0);
+    &.active {
+        top: 0;
+        background: white;
+        padding: 1rem 0;
+        box-shadow: 0 1rem 1rem rgba(0,0,0,.2);
+    }
+
+    &__logo {
+        font-size: 2.4rem;
+        line-height: 3rem;
+        font-weight: 800;
+        text-decoration: none;
+        color: $c-one;
+        letter-spacing: $spacing;
+        @include breakpoint(desktop) {
+            font-size: 5rem;
+            line-height: 5rem;
+        }
+    }
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        transform: translateX(-101%);
+        transition: $transition;
+        @include breakpoint(desktop) {
+            position: relative;
+            width: auto;
+            height: auto;
+            background: inherit;
+            transform: translateX(0);
+        }
+
+        &.active {
+            transform: translateX(0);
+
+        }
+
+        > ul {
+            flex-direction: column;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 7.6rem;
+            @include breakpoint(desktop) {
+                flex-direction: row;
+            }
+
+            > li {
+                position: relative;
+
+                &:nth-child(2) {
+                    padding-left: .8rem;
+                    margin-right: -.8rem;
+                }
+            }
+
+            a {
+                font-size: 2.5rem;
+                color: black;
+                text-decoration: none;
+                font-weight: 800;
+                text-transform: uppercase;
+                line-height: 3rem;
+                box-sizing: border-box;
+                transition: $transition;
+                &:hover {
+                    color: $c-three;
+                }
+            }
+        }
+    }
+
+    &__dropdown {
+        display: none;
+
+        &.active {
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 2.4rem 3.2rem;
+            background: $c-five;
+            box-shadow: 0 3px 3.5px rgba(0, 0, 0, .35);
+            border-radius: .7rem;
+        }
+
+        li {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__btn {
+        width: 3rem;
+        height: 2.4rem;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        z-index: 2;
+        @include breakpoint(desktop) {
+            display: none;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: $c-one;
+            transition: $transition;
+
+            &:first-child {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:nth-child(3) {
+                top: 100%;
+                transform: translateY(-100%);
+            }
+        }
+
+        &.active {
+            span {
+                &:first-child {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    width: 0;
+                }
+
+                &:nth-child(3) {
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+}

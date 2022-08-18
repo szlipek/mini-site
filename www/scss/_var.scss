@@ -1,0 +1,73 @@
+// Colors //
+$c-one: #000;
+$c-two: #fff;
+$c-three: #53686c;
+$c-four: #F9F9F9;
+$c-five: #dfdede;
+
+// Fonts //
+$f-one: 'Open Sans', sans-serif;
+
+// Transitions //
+$transition: all .4s linear;
+
+// Letter spacing //
+
+$spacing: .5px;
+$spacing-one: .3px;
+$spacing-two: -.05px;
+$spacing-three: -.08px;
+
+// Responsive mixins //
+
+@mixin breakpoint($point) {
+    @if $point == mediumDesktop {
+        @media (min-width: 1381px) {
+            @content;
+        }
+    } @else if $point == fullHd {
+        @media (max-width: 1920px) {
+            @content;
+        }
+    } @else if $point == desktop {
+        @media (min-width: 960px) {
+            @content;
+        }
+    }  @else if $point == smallDesktop {
+        @media (max-width: 1480px) {
+            @content;
+        }
+    } @else if $point == smallerDesktop {
+        @media (max-width: 1300px) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media (max-width: 960px) {
+            @content;
+        }
+    } @else if $point == smallComputer {
+        @media (max-height: 765px) and (min-width: 960px) {
+            @content;
+        }
+    } @else if $point == phablet {
+        @media (min-width: 600px) {
+            @content;
+        }
+    } @else if $point == newMobile {
+        @media (max-width: 500px) and (min-height: 700px) {
+            @content;
+        }
+    } @else if $point == mobileonly {
+        @media (max-width: 420px) {
+            @content;
+        }
+    } @else if $point == mediumMobile {
+        @media (max-width: 400px) {
+            @content;
+        }
+    } @else if $point == smallMobile {
+        @media (max-width: 330px) {
+            @content;
+        }
+    }
+}

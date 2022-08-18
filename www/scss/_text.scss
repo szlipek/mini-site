@@ -1,0 +1,28 @@
+h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 3rem;
+    letter-spacing: $spacing;
+    @include breakpoint(desktop) {
+        font-size: 5rem;
+        line-height: 5.5rem;
+    }
+}
+
+h2 {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    letter-spacing: $spacing-one;
+    color: $c-three;
+    font-weight: bold;
+    @include breakpoint(desktop) {
+        font-size: 4.9rem;
+        line-height: 8.5rem;
+    }
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    letter-spacing: $spacing-two;
+}

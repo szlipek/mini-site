@@ -1,0 +1,53 @@
+.lightbox {
+    &__box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $c-two;
+        z-index: 3;
+        figure {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        width: 3.4rem;
+        height: 3.4rem;
+        cursor: pointer;
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: $c-one;
+            top: 0;
+            left: 0;
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &::after {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 3px;
+            background: $c-one;
+            top: 0;
+            left: 0;
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}

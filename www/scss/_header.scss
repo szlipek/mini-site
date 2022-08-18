@@ -1,0 +1,48 @@
+.header {
+    position: relative;
+    height: 76.1rem;
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+            @include breakpoint(bigDesktop) {
+                object-position: center;
+            }
+        }
+    }
+    .container {
+        height: 100%;
+        position: relative;
+    }
+    h1 {
+        color: $c-two;
+        flex: 0 0 100%;
+        margin-bottom: 1.1rem;
+    }
+    p {
+        flex: 0 0 100%;
+        font-size: 2.1rem;
+        line-height: 3.2rem;
+        color: $c-two;
+        letter-spacing: $spacing;
+        margin-bottom: 1rem;
+        @include breakpoint(desktop) {
+            flex: 0 0 50%;
+            margin-bottom: 0;
+        }
+    }
+    &__text{
+        width: 49rem;
+        padding-bottom: 15.8rem;
+    }
+    .btn {
+        margin-left: 2.9rem;
+    }
+}
